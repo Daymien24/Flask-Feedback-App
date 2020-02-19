@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='../static/style.css'>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <title>Ankieta WZIM</title>
+</head>
+<body>
+    <div class='container'>
+        <img src="../static/logo.jpg" alt='WZIM' class='logo'>
+        {% if message %}
+            <p class='message'>{{ message | safe}}</p>
+        {% endif %}
+        
+        <!-- @todo - message -->
+        <form action='/submit' method='POST'>
+            <div class='form-group'>
+                <h3>Imie studenta</h3>
+                <input type='text' name='student' placeholder="Twoje imie">
+            </div>
+            <div class='form-group'>
+                <h3>Prowadzacy</h3>
+                <select name='teacher'>
+                    <option value="">Choose your teacher</option>
+                    <option value="Koti">Koti</option>
+                    <option value="Maro">Maro</option>
+                    <option value="Paweł">Pawel</option>
+                    <option value="Hania">Hania</option>
+                    <option value="Gostek">Gostek</option>
+                </select>
+            </div>
+            <div class='form-group oceny'>
+                <h3>Ocen nauczyciela</h3>
+                <input type="radio" name="rating" value='1'> 1
+                <input type="radio" name="rating" value='2'> 2
+                <input type="radio" name="rating" value='3'> 3
+                <input type="radio" name="rating" value='4'> 4
+                <input type="radio" name="rating" value='5' checked> 5
+            </div>
+            <div class="form-group">
+          <h3>Komentarz</h3>
+          <textarea
+            name="comments"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Opisz krótko swoje przeżycia na tym przedmiocie"
+          ></textarea>
+            </div>
+            <input type="submit" value="Submit" class="btn" />
+        </form>
+    </div>
+</body>
+</html>
