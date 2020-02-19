@@ -55,7 +55,7 @@ def submit():
             data = Feedback(student, teacher, rating, comments)
             db.session.add(data)
             db.session.commit()
-            send_mail(student, teacher, rating, comments)
+            #send_mail(student, teacher, rating, comments)
             return render_template('succes.html')
         return render_template('index.html', message=f'Juz submitnales feedback dla {teacher}')
 
