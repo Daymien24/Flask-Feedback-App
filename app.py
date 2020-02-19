@@ -57,7 +57,7 @@ def submit():
             db.session.commit()
             send_mail(student, teacher, rating, comments)
             return render_template('succes.html')
-        return render_template('index.html', message='Juz submitnales feedback')
+        return render_template('index.html', message=f'Juz submitnales feedback dla {teacher}')
 
 if __name__ == '__main__':
     app.run()
