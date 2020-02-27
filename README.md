@@ -1,5 +1,5 @@
 # Feedback Flask App
-This is my simple version of a feedback app using Flask freamwork and postgres database.
+This is my simple version of a feedback app using Flask freamwork and postgres database with some Hogwarts content :)
 
 # Screenshot
 ![something went wrong](readme.jpg)
