@@ -4,24 +4,23 @@ from send_mail import send_mail
 
 app = Flask(__name__)
 
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV =='dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:root@localhost/wzim'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://LOGIN:PASSWORD@localhost/hogwarts'
 else: # ENV = 'prod'
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://idfbzevcayhqdo:849c97cd8e873964d5316d1f2e6a5c20bcb7932f9e7713a44da6a5d274d986a1@ec2-18-210-51-239.compute-1.amazonaws.com:5432/df9qekss66goub' # you get it from heroku for example
+    app.config['SQLALCHEMY_DATABASE_URI'] = '' # you get it from heroku config for example
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app) # creating our database
 
-#engine = create_engine("postgresql://postgres:123456@localhost/wzim", pool_pre_ping=True)
 
 # The way SQLAlchemy works - we create models, therefore we make a class
 class Feedback(db.Model):
-    __tablename__ = 'feedback'
+    __tablename__ = 'hogwarts'
     id = db.Column(db.Integer, primary_key=True)
     student = db.Column(db.String(50))
     teacher = db.Column(db.String(50))
@@ -49,7 +48,7 @@ def submit():
         # print(student, teacher, rating, comments)
         if student == '' or teacher =='':
             # flash('EJ EJ cos jest nietak', 'danger')
-            return render_template('index.html', message='Wprowadz dane gapciu')
+            return render_template('index.html', message='Insert the data!')
         if db.session.query(Feedback).filter(Feedback.student == student).count() < 5:
             # adding data to our table
             data = Feedback(student, teacher, rating, comments)

@@ -3,7 +3,7 @@
 <head>
     <link rel='stylesheet' href='../static/style.css'>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-    <title>Ankieta WZIM</title>
+    <title>Teachers Feedback</title>
 </head>
 <body>
     <div class='container'>
@@ -15,22 +15,25 @@
         <!-- @todo - message -->
         <form action='/submit' method='POST'>
             <div class='form-group'>
-                <h3>Imie studenta</h3>
-                <input type='text' name='student' placeholder="Twoje imie">
+                <h3>Student's name</h3>
+                <input type='text' name='student' placeholder="Your name">
             </div>
             <div class='form-group'>
-                <h3>Prowadzacy</h3>
+                <h3>Teacher</h3>
                 <select name='teacher'>
                     <option value="">Choose your teacher</option>
-                    <option value="Koti">Koti</option>
-                    <option value="Maro">Maro</option>
-                    <option value="Paweł">Pawel</option>
-                    <option value="Hania">Hania</option>
-                    <option value="Gostek">Gostek</option>
+                    <option value="McGonagall">McGonagall</option>
+                    <option value="Lockhart">Lockhart</option>
+                    <option value="Sprout">Sprout</option>
+                    <option value="Slughorn">Slughorn</option>
+                    <option value="Pomfrey">Pomfrey</option>
+                    <option value="Snape">Snape</option>
+                    <option value="FLitwick">Flitwick</option>
+                    <option value="Quirrell">Quirrell</option>
                 </select>
             </div>
             <div class='form-group oceny'>
-                <h3>Ocen nauczyciela</h3>
+                <h3>Rate your teacher</h3>
                 <input type="radio" name="rating" value='1'> 1
                 <input type="radio" name="rating" value='2'> 2
                 <input type="radio" name="rating" value='3'> 3
@@ -38,13 +41,13 @@
                 <input type="radio" name="rating" value='5' checked> 5
             </div>
             <div class="form-group">
-          <h3>Komentarz</h3>
+          <h3>Comment</h3>
           <textarea
             name="comments"
             id=""
             cols="30"
             rows="10"
-            placeholder="Opisz krótko swoje przeżycia na tym przedmiocie"
+            placeholder="Describe shortly your expirience"
           ></textarea>
             </div>
             <input type="submit" value="Submit" class="btn" />

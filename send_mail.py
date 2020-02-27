@@ -3,13 +3,13 @@ from email.message import EmailMessage
 
 def send_mail(student, teacher, rating, comments):
 
-    address = 'men.stefan@gmail.com'
-    password = 'Biedronka123'
+    address = 'yourmail@gmail.com' # 
+    password = 'yourpassword'
 
     msg = EmailMessage()
-    msg['Subject'] = 'Ankieta'
+    msg['Subject'] = 'Survey'
     msg['From'] = address
-    msg['To'] = 'men.stefan1@gmail.com'
+    msg['To'] = 'receiver@gmail.com'
 
     msg.add_alternative(f"""\
     <!DOCTYPE html>
